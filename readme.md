@@ -17,7 +17,7 @@
 <li> Internet Pioneers</li>
 <li> Internet History Timeline</li>
 <li> Internet Search</li>
-<li> Early Home Computers</li>
+<li> Early Home Computers</li><br>
 
 </ul>
 </body>
