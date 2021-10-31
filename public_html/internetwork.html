@@ -28,27 +28,19 @@
 
         #text{
             background-color: #c5ebf5;
-            padding: 20px;
+
             margin-top: 90px;
-            display: block;
-            height: 300px;
-        }
-        .c1{
-            width: 620px;
-            margin-top: 50px;
-            margin-left: 100px;
+            text-align: center;
+            height: 150px;
+            padding-top: 40px;
+
         }
 
-        #example1 {
-            border:1px;
-            padding: 10px;
-            box-shadow: 5px 10px 8px #888888;
-            background-color: #f8f8f8;
-            height: 750px;
-            margin-top: 20px;
-            margin-left: 190px;
-            margin-right: 190px;
-            margin-bottom: 20px;
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+            width: 100%;
         }
         h3{
             background-color:#666;
@@ -57,30 +49,27 @@
             color: white;
 
         }
-        #packet{
-            margin-left: 30px;
-            margin-right: 30px;
+        .aside {
+            padding: 15px;
+            box-shadow: 5px 10px 8px #888888;
+            background-color: #f8f8f8;
+            text-align: center;
+            font-size: 14px;
 
         }
-        #circuit{
-            float: left;
-            width: 700px;
-            margin-left: 100px;
-        }
-        #p1{
-            width: 700px;
-            margin-top: 40px;
-        }
-        #h4{
-            margin-left: 340px;
-        }
-        #img1{
-            float: right;
-            margin-right: 30px;
-
+        .responsive {
+            margin-left: 25%;
+            height: auto;
         }
 
-
+        @media only screen and (max-width: 620px) {
+            /* For mobile phones: */
+            .menu, .example1, .responsive {
+                width: 100%;
+                max-width: 400px;
+                margin: 0px;
+            }
+        }
            </style>
 </head>
 <body>
@@ -108,10 +97,10 @@
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                    <a class="nav-link active" aria-current="page" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Team</a>
+                    <a class="nav-link active" aria-current="page" href="team.html">Team</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -135,26 +124,45 @@
         </div>
     </div>
 </nav>
-<div id ="text">
+<div id ="text" style="text-align:center; ">
     <h1 class="c1">How does the Internet work?</h1>
-    <p class="c1" style="padding-bottom: 2%">
-        The Internet is a network of networks. It works by using a technique called packet switching, and by relying on standardized networking protocols that all computers can interpret.
+    <p class="c1" style="padding-bottom: 2% ; font-size: 20px; ">
     </p>
+    <br>
+
 
 </div>
-<div id="example1">
-    <div id="packet">
-    <div> <h3>How packet switching works?</h3></div>
-        <br>
-    <h4>What is circuit switching?</h4>
-        <br>
-        <img src="images/circuitswitching.gif" alt="circuitswitching">
-        <p id="circuit" >Suppose you want to move home from the United States to Africa and you decide to take your whole house with you—not just the contents, but the building too! Imagine the nightmare of trying to haul a house from one side of the world to the other. You'd need to plan a route very carefully in advance. You'd need roads to be closed so your house could squeeze down them on the back of a gigantic truck. You'd also need to book a special ship to cross the ocean. The whole thing would be slow and difficult and the slightest problem en-route could slow you down for days. You'd also be slowing down all the other people trying to travel at the same time. Circuit switching is a bit like this. It's how a phone call works.</p>
-       <br><br> <h4 id="h4"> What is packet switching?</h4>
-        <img id="img1" src="images/packetswitching.gif" alt="packetswitching">
-        <p id="p1">Is there a better way? Well, what if you dismantled your home instead, numbered all the bricks, put each one in an envelope, and mailed them separately to Africa? All those bricks could travel by separate routes. Some might go by ship; some might go by air. Some might travel quickly; others slowly. But you don't actually care. All that matters to you is that the bricks arrive at the other end, one way or another. Then you can simply put them back together again to recreate your house. Mailing the bricks wouldn't stop other people mailing things and wouldn't clog up the roads, seas, or airways. Because the bricks could be traveling "in parallel," over many separate routes at the same time, they'd probably arrive much quicker. This is how packet switching works. When you send an email or browse the Web, the data you send is split up into lots of packets that travel separately over the Internet.</p>
+<img src="images/work.png" alt="Nature" class="responsive" width="800" height="600">
+<div class="example1">
+    <div class="col-3 col-s-12">
+        <div class="aside">
+            <h2>Step One: Typing the URL into the Browser</h2>
+            <p>You open up your computer’s (or phone’s) browser and type in rookiemag.com into the address bar. Rookiemag.com is the URL (uniform resource locator) that tells your browser what website you’d like to view.</p>
 
+            <br><h2>Step Two: Finding the Server’s Address (DNS Lookup)</h2>
+            <p>Your computer can use the URL you’ve entered to look up the associated server’s IP address in a process called DNS (domain name system) lookup, just like you’d use a name to search for a phone number in your contact list. You might be wondering about the differences among the different URL endings, like .org, .com, and .net. Because there are so many URLs and IP addresses to search, DNS lookup uses those endings as its first round of elimination in its search. In our example, DNS lookup starts looking for the IP address for rookiemag.com in a directory of all .com IP addresses. Eventually, the lookup for rookiemag.com will return the IP address of Rookie’s server. If you’re curious to learn more about DNS lookup, here’s a great resource on it, in cartoon form.</p>
+            <h2>Step Three: Establishing a TCP Connection</h2>
+            <p>Computers are respectful and follow protocol-based communication. So, a computer starts a conversation with another computer by sending a message that’s the equivalent of, “Is now a good time to talk?” The other computer will respond with a message that’s the equivalent of “Sure!”, if it’s available for communication. And the first computer replies with a message that means, “Cool, just wanted to check first.” If the first computer never gets a reply back saying it is OK to talk, it won’t continue to send messages.</p>
+
+            <h2>Step Four: Preparing Messages</h2>
+            <p>Now that there’s a connection from your computer to Rookie’s server, the two computers can talk to each other. Servers use a way of talking called HTTP (hypertext transfer protocol). Just like you’d start a letter to Beyoncé with “Dear Beyoncé,” HTTP requires that computers start messages with a greeting called a header. There are a few different kinds of headers, which your computer knows to use based on what you’ve asked your computer to do. When you type in Rookie’s URL and hit enter, the message your computer sends through the network connection to Rookie’s server uses a header specifically for requesting information, called a GET header. If you’re posting a comment, the message your computer sends a message to to Rookie’s server with a POST header, which is specifically for sending information to a server.</p>
+
+            <h2>Step Five: Journey of the Messages</h2>
+            <p>And now, your computer’s message must go on a journey to get to Rookie’s router! In our example, we’re sending a message from your computer to Rookie’s server. Just like traveling on a plane, sometimes that message can be transferred fairly directly, or sometimes there are stops (like layovers) along the way. These “stops” can just be standard network points that are part of the path, or interruptions that can be caused by a number of different things. For example, a message might have to pause or re-route when a network is congested, just like cars might have to in a traffic jam. For the appropriate message to go from your computer to Rookie’s router, we wrap the message in a TCP (remember TCP from Step Three?) packet. The TCP packet acts like the envelope of a letter, with information on where the message is going, as well as who sent it. The packet is essentially just a unit of information that is readable by the server.</p>
+
+            <h2>Step Six: Response From the Server</h2>
+            <p>Once your message arrives at Rookie’s server, Rookie will respond (how kind!). So long as the message was written with an HTTP header, Rookie’s server will know the proper automatic response. It’s sort of like how you know to say, “Who’s there?” when someone says, “Knock knock.” The standard response is a 200 OK message, which is basically a status message from the server, saying whether or not the request went through. With a 200 OK message, we’re good to go ahead and render the webpage. You might have come across a 404 Document Not Found page before. A 404 response means that the website you asked for doesn’t exist on the server. These are just a couple out of many different standard responses a website may give.</p>
+
+            <h2>Step Seven: Rendering the Webpage</h2>
+            <p>The rest of the information in the message contains the website data. The text, images, and formatting information is all part of the website data, and this is written in the programming languages HTML and CSS. HTML and CSS act like LEGO instructions, which tell how all of the information for the website should fit together. For example, the text <title>Rookie</title> tells the browser to put “Rookie” in the title area of the browser. Once the web browser has fully loaded all of the content for rookiemag.com, you can happily browse through the beautiful writing and artwork on the site!</p>
+
+
+
+
+        </div>
     </div>
+</div>
+
 </div>
 
 </body>
