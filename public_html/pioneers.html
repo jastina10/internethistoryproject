@@ -18,7 +18,7 @@
         }
         body {
             padding-top: 90px;
-            padding-left: 14px;
+            padding-left: 10px;
             padding-right: 14px;
             padding-bottom: 0px;
             margin-top: 0px;
@@ -27,7 +27,6 @@
             margin-bottom: 0px;
         }
         h1 {
-            font-family: "Arial Rounded MT Bold";
             font-size: 200%;
             color: black;
             text-align: center;
@@ -42,9 +41,6 @@
             padding: inherit;
             margin-top: auto;
         }
-        .t-align-center {
-            text-align: center;
-        }
         .page-section {
             display: flex;
             flex-direction: row;
@@ -58,8 +54,6 @@
         .grid-left {
             padding: 0;
             text-align: left;
-            font-family : Arial;
-            font-size: 20px;
             color: black;
             flex: 70% !important;
         }
@@ -89,28 +83,14 @@
             .page-section {
                 flex-direction: column;
             }
-            /*.body-content {*/
-            /*    float: none;*/
-            /*}*/
-            /*.t-align-center {*/
-            /*    overflow: auto;*/
-            /*    float: none;*/
-            /*    flex-direction: column;*/
-            /*}*/
-            /*.divSection {*/
-            /*    float: none;*/
-            /*}*/
         }
         .divBottomFontStyle {
-            font-family: "Lemonada";
             font-size: large;
             color: darkgreen;
         }
         .grid-left {
             padding: 0;
             text-align: left;
-            font-family: Roboto;
-            font-size: 20px;
             color: black;
             flex: 70% !important;
         }
@@ -141,8 +121,8 @@
         }
 
         @media screen and (max-width: 600px) {
-            ul.topnavnavbar-nav li.right,
-            ul.navbar-nav li {float: none;}
+            ul.navbar li.right,
+            ul.navbar li {float: none;}
             /*div.hero-image*/
         }
 
@@ -200,8 +180,6 @@
                         <li><a class="dropdown-item" href="internetwork.html">How Does Internet Work</a></li>
                         <li><a class="dropdown-item" href="pioneers.html">Internet Pioneers</a></li>
                         <li><a class="dropdown-item" href="timeline.html">Internet History Timeline</a></li>
-
-
                     </ul>
                 </li>
 
@@ -213,9 +191,9 @@
         </div>
     </div>
 </nav>
-
-<div class="body-content">
-    <h2 style="text-align: center">Internet Pioneers</h2>
+<div id="color" style="background-color: lavender;">
+<div class="body-content" style="padding-left: 20px">
+    <h2 style="text-align: center;padding:30px;background-color: cadetblue  ">Internet Pioneers</h2>
 
     <div class="page-section">
         <div class="grid-left">
@@ -336,7 +314,6 @@
                 It went on to become the standard for all Internet communication.</p>
             </div>
         </div>
-    </div>
 
     <div class="page-section">
         <div class="grid-left">
@@ -355,6 +332,7 @@
             <img src="images/timBernersLee.jpg" alt="mySpace logo" class="grid-img">
         </div>
     </div>
+</div>
 </div>
 
 <footer><a href="https://github.com/anujaku/internethistoryproject" style="color: gray">Anuja Kulkarni</a> &#169</footer>
