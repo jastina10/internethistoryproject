@@ -16,6 +16,9 @@
 
         .container{
             margin-top: 90px;
+            text-align: center;
+            alignment: center;
+            position: relative;
         }
         nav{
             height: 70px;
@@ -24,11 +27,42 @@
         .card{
 
             margin-bottom: 30px;
-
+            alignment: center;
+            position: relative;
             margin-right: 30px;
             height: 500px;
             float: left;
+            text-align: center;
+            margin-left: 250px;
 
+
+        }
+        .footer {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            text-align: center;
+
+
+        }
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .container {
+                width: 100%;
+
+            }
+        .card{
+        margin-left: 50px;}
+            .footer {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                color: black;
+                text-align: center;
+            }
         }
 
 
@@ -89,11 +123,13 @@
 
 <main class="container">
     <h1 class="text-left mt-3">Meet the Team</h1>
+    <p class="text-left mt-3">
+        This website was created by Suhani Javia and Anuja Kulkarni, two graduate students at the New Jersey
+        Institute of Technology.
+    </p><br>
+
     <div class="col-7">
-        <p class="mt-3">
-            This website was created by Suhani Javia and Anuja Kulkarni, two graduate students at the New Jersey
-            Institute of Technology.
-        </p>
+
     </div>
     <div class="row ml-2">
         <div class="card" style="width: 18rem;">
@@ -126,6 +162,35 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+<div class="footer" >
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+
+                <small class="d-block mb-3 text-muted">&copy; 2021</small>
+
+                <a style="text-decoration: none" href="https://validator.w3.org/">W3C Validator</a>
+
+            </div>
+            <div class="col-6 col-md">
+                <h5>Suhani Javia</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a style="text-decoration: none" class="text-muted" href="#">Email: sj48@njit.edu</a></li>
+                    <li><a  class="text-muted" href="https://github.com/jastina10/internethistoryproject">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Anuja Kulkarni</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a style="text-decoration: none" class="text-muted" href="#">Email: avk5@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://github.com/anujaku/internethistoryproject">Github</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
 
