@@ -84,8 +84,85 @@
             grid-template-columns: 50% 50%;
             grid-template-rows: repeat(3, 40vw)
         }
+        @media (max-width: 800px) {
+            .page-section {
+                flex-direction: column;
+            }
+            div.hero-image {
+                max-width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+            }
+            /*.body-content {*/
+            /*    float: none;*/
+            /*}*/
+            /*.t-align-center {*/
+            /*    overflow: auto;*/
+            /*    float: none;*/
+            /*    flex-direction: column;*/
+            /*}*/
+            /*.divSection {*/
+            /*    float: none;*/
+            /*}*/
+        }
+        .divBottomFontStyle {
+            font-family: "Lemonada";
+            font-size: large;
+            color: darkgreen;
+        }
+        .grid-left {
+            padding: 0;
+            text-align: left;
+            font-family: Roboto;
+            font-size: 20px;
+            color: black;
+            flex: 70% !important;
+        }
+
+        .grid-right {
+            text-align: center;
+            flex: 30%;
+        }
+
+        .grid-img {
+            display: inline-block;
+            max-height: 350px;
+            width: auto;
+            max-width: 450px;
+        }
+
+        .grid-container-bw {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(1, 40vw)
+        }
+
+        .grid-container-3 {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(3, 40vw)
+        }
+
+        @media screen and (max-width: 600px) {
+            ul.topnavnavbar-nav me-auto mb-2 mb-lg-0 li.right,
+            ul.navbar-nav me-auto mb-2 mb-lg-0 li {float: none;}
+            /*div.hero-image*/
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+        }
+
         @media (max-width: 700px) {
-            .row {
+            .row, .navbar {
                 flex-direction: column;
             }
         }
@@ -124,9 +201,9 @@
                         History of the Internet
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Early Innovation</a></li>
+                        <li><a class="dropdown-item" href="earlyinnovation.html">Early Innovation</a></li>
                         <li><a class="dropdown-item" href="internetwork.html">How Does Internet Work</a></li>
-                        <li><a class="dropdown-item" href="#">Internet Pioneers</a></li>
+                        <li><a class="dropdown-item" href="pioneers.html">Internet Pioneers</a></li>
                         <li><a class="dropdown-item" href="timeline.html">Internet History Timeline</a></li>
 
 
@@ -144,6 +221,7 @@
 
 <div class="body-content">
     <h1 style="text-align: center">Early Innovation of the Internet</h1>
+    <p><br/></p>
 
     <div class="grid-container-4">
         <div class="page-section">
@@ -225,17 +303,7 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
+<footer><a href="https://github.com/anujaku/internethistoryproject" style="color: gray">Anuja Kulkarni</a> &#169</footer>
 
 </body>
 </html>

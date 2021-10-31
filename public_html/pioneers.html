@@ -12,140 +12,155 @@
 
 
     <style>
-        img{
-            height: 600px;
-        }
-
-
-        nav{
+        nav {
             height: 70px;
-            font-size: 25px;
+            font-size: 20px;
+        }
+        body {
+            padding-top: 90px;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-bottom: 0px;
+            margin-top: 0px;
+            margin: fill;
+            image-resolution: from-image;
+            margin-bottom: 0px;
+        }
+        h1 {
+            font-family: "Arial Rounded MT Bold";
+            font-size: 200%;
+            color: black;
+            text-align: center;
+            /*text-decoration-style: solid;*/
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+        .body-content {
+            min-height: available;
+            display: contents;
+            width: border-box;
+            padding: inherit;
+            margin-top: auto;
+        }
+        .t-align-center {
+            text-align: center;
+        }
+        .page-section {
+            display: flex;
+            flex-direction: row;
         }
 
-        /* The actual timeline (the vertical ruler) */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+        @media (max-width: 600px) {
+            .page-section {
+                flex-direction: column;
+            }
+        }
+        .grid-left {
+            padding: 0;
+            text-align: left;
+            font-family : Arial;
+            font-size: 20px;
+            color: black;
+            flex: 70% !important;
+        }
+        .grid-right {
+            text-align: center;
+            flex: 30%;
+        }
+        .grid-img {
+            display: inline-block;
+            border: 1px solid black;
+            max-height: 300px;
+            width: auto;
+            max-width: 450px;
+            alignment: right;
+        }
+        .grid-container-bw {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(1, 40vw)
+        }
+        .grid-container-3 {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(3, 40vw)
+        }
+        @media (max-width: 800px) {
+            .page-section {
+                flex-direction: column;
+            }
+            /*.body-content {*/
+            /*    float: none;*/
+            /*}*/
+            /*.t-align-center {*/
+            /*    overflow: auto;*/
+            /*    float: none;*/
+            /*    flex-direction: column;*/
+            /*}*/
+            /*.divSection {*/
+            /*    float: none;*/
+            /*}*/
+        }
+        .divBottomFontStyle {
+            font-family: "Lemonada";
+            font-size: large;
+            color: darkgreen;
+        }
+        .grid-left {
+            padding: 0;
+            text-align: left;
+            font-family: Roboto;
+            font-size: 20px;
+            color: black;
+            flex: 70% !important;
         }
 
-        /* The actual timeline (the vertical ruler) */
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: white;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+        .grid-right {
+            text-align: center;
+            flex: 30%;
         }
 
-        /* Container around content */
-        .container-timeline {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
+        .grid-img {
+            display: inline-block;
+            max-height: 250px;
+            width: auto;
+            max-width: 450px;
+            alignment: right;
         }
 
-        /* The circles on the timeline */
-        .container-timeline::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -13px;
-            background-color: white;
-            border: 4px solid #FF9F55;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
+        .grid-container-bw {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(1, 40vw)
         }
 
-        /* Place the container to the left */
-        .left {
-            left: 0;
+        .grid-container-3 {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(3, 40vw)
         }
 
-        /* Place the container to the right */
-        .right {
-            left: 50%;
-        }
-
-        /* Add arrows to the left container (pointing right) */
-        .left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-
-        /* Add arrows to the right container (pointing left) */
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        /* Fix the circle for containers on the right side */
-        .right::after {
-            left: -12px;
-        }
-
-        /* The actual content */
-        .content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-        }
-
-        /* Media queries - Responsive timeline on screens less than 600px wide */
         @media screen and (max-width: 600px) {
-            /* Place the timelime to the left */
-            .timeline::after {
-                left: 31px;
-            }
-
-            /* Full-width containers */
-            .container-timeline {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            /* Make sure that all arrows are pointing leftwards */
-            .container-timeline::before {
-                left: 60px;
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-            }
-
-            /* Make sure all circles are at the same spot */
-            .left::after, .right::after {
-                left: 10px;
-            }
-
-            /* Make all right containers behave like the left ones */
-            .right {
-
-            }
+            ul.topnavnavbar-nav li.right,
+            ul.navbar-nav li {float: none;}
+            /*div.hero-image*/
         }
 
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: black;
+        }
+
+        @media (max-width: 700px) {
+            .row, .navbar {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -159,7 +174,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 -->
-<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
+<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light  fixed-top">
     <div class="container-fluid">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -198,6 +213,151 @@
         </div>
     </div>
 </nav>
+
+<div class="body-content">
+    <h2 style="text-align: center">Internet Pioneers</h2>
+
+    <div class="page-section">
+        <div class="grid-left">
+            <h4 class="adjust-margin"><strong>J.C.R. Licklider</strong></h4>
+            <p>In 1962, Dr. Joseph Carl Robnett Licklider formulated the earliest ideas of global networking
+                discussing thenan “Intergalactic Computer Network.” He envisioned a globally interconnected set
+                of computers through which everyone could quickly access data and programs from any site.
+                In 1963, Dr. J.C.R. Licklider’s persuasive and detailed description of the challenges in
+                establishing a time-sharing network of computers that ultimately led to the creation of the
+                ARPAnet.
+                His 1968, he illustrated his vision of network applications and predicted the use of computer
+                networks for communications through a detailed paper called “The Computer as a Communication
+                Device”. Until then, computers had generally been thought of as mathematical devices for
+                speeding up computations.
+            </p>
+        </div>
+        <div class="grid-right">
+            <img src="Images/Licklider.jpg" alt="J.C.R. Licklider" class="grid-img">
+        </div>
+    </div>
+    <div class="page-section">
+        <div class="grid-left">
+            <h4 class="adjust-margin"><strong>Bob Kahn </strong></h4>
+            <p>In October 1972, Kahn organized a large and very successful demonstration of the ARPANET
+                at the International Computer Communication Conference (ICCC). This was the first public
+                demonstration of this new network technology to the public. It was also in 1972 that the
+                application, electronic mail, was introduced. In March Ray Tomlinson at BBN wrote the basic
+                email message send and read software, motivated by the need of the ARPANET developers for an
+                easy coordination mechanism. In July, Roberts expanded its utility by writing the first email
+                utility program to list, selectively read, file, forward, and respond to messages. From there
+                email took off as the largest network application for over a decade. This was a harbinger of
+                the kind of activity we see on the World Wide Web today, namely, the enormous growth of all
+                kinds of “people-to-people” traffic.</p>
+        </div>
+            <div class="grid-right">
+                <img src="Images/bobKahn.jpg" alt="Facebook logo" class="grid-img">
+            </div>
+
+    </div>
+    <div class="page-section">
+        <div class="grid-left" style="text-align: left">
+            <p>In the spring of 1973, Kahn approached Cerf with the idea of developing a system for
+                interconnecting networks—what would eventually be called an “internet.” Kahn felt that his
+                own knowledge of the problem of connecting dissimilar networks, combined with Cerf’s expertise
+                in writing host software, would create a strong partnership. In addition, Kahn and Cerf
+                demonstrated farsighted leadership by inviting networking experts from around the world to
+                weigh in on the Internet design at a seminar in June 1973. This move not only led to more
+                robust protocols, but also laid the groundwork for the global spread of the Internet.</p>
+        </div>
+    </div>
+    <div class="page-section">
+        <div class="grid-left">
+            <h4 class="adjust-margin"> <strong>Lawrence Robert</strong></h4>
+            <p>Dr. Robert designed and managed the first packet network, which was the ARPANET. In 1967,
+                Dr. Roberts started the task of designing, funding, and managing the radically new
+                communications network concept of packet switching.
+                In April 1967,Roberts presented the technical specifications for the network in an ARPAnet
+                meeting. However, after the meeting, computer scientist Wesley Clark suggested Robert that
+                the actual networking should be handled by smaller computers called interface message processors
+                (IMPs) rather than the large mainframes that would be the nodes of ARPANET. Roberts modified
+                the ARPANET plan to incorporate Clark’s suggestion. On October 29, 1969, American computer
+                scientist Leonard Kleinrock and his student Charley Kline sent the first message over ARPANET
+                from an IMP and computer at the University of California, Los Angeles, to an IMP and computer
+                at Stanford Research Institute in Menlo Park, California.</p>
+        </div>
+        <div class="grid-right">
+            <img src="Images/lawrenceRoberts.jpg" alt="Napster Logo" class="grid-img">
+        </div>
+    </div>
+        <div class="page-section">
+            <div class="grid-left" style="text-align: left">
+                <p>Computers were added quickly to the ARPANET during the following years, and work proceeded
+                on completing a functionally complete Host-to-Host protocol and other network software.
+                In December 1970 the Network Working Group working under S. Crocker finished the initial
+                ARPANET Host-to-Host protocol, called the Network Control Protocol (NCP). As the ARPANET sites
+                completed implementing NCP during the period 1971-1972, the network users finally could begin
+                to develop applications.
+                In 1971 Lawrence Robert wrote one of the first e-mail programs, RD, which for the first
+                time allowed users to save, delete, and organize their messages.</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="page-section">
+        <div class="grid-left">
+            <h4 class="adjust-margin"> <strong>Vint Cerf </strong></h4>
+            <p>Within a few years of the creation of the ARPANET, other computers networks were deployed.
+                They were all independent self-contained networks. Around this time Bob was looking for a
+                solution to connect and communicate computers at different places and on different networks.
+                While looking for the solution they realized that there needed to be a "gateway" computer between
+                each network to route packets. The gateway computers would not care about the various complexities
+                of each network. They would simply be in charge of passing packets back and forth. But all of
+                the networks transmitted packets in different ways, using their own protocols. So a new standard
+                was needed to link all of the networks and allow inter-network communication.
+                Cerf and Kahn began working out a plan in 1973.</p>
+        </div>
+        <div class="grid-right">
+            <img src="Images/vintCerf.jpg" alt="mySpace logo" class="grid-img">
+        </div>
+    </div>
+        <div class="page-section">
+            <div class="grid-left" style="text-align: left">
+                <p>In September, they presented a paper outlining
+                their ideas to the International Networking Group. In May 1974, they complete their paper,
+                "A Protocol for Packet Network Intercommunication." They described a new protocol which is known
+                as the transmission-control protocol (TCP). The main idea of this protocol was to enclose packets
+                in "datagrams" that would act as the envelopes containing letters. The content and format of the
+                letter is not important for its delivery. The information on the envelope is standardized to
+                facilitate delivery. Gateway computers would simply read only the delivery information contained
+                in the datagrams and deliver the contents to host computers. Only the host computers would actually
+                "open" the envelope and read the actual contents of the packet. TCP allowed networks to be joined
+                into a network of networks, or what we now call the Internet.
+                Cerf continued to refine TCP. In 1978, Cerf and several of his colleagues made a major
+                refinement and they split TCP into two parts. They took the part of TCP that is responsible
+                for routing packages and formed a separate protocol called the Internet Protocol (IP).TCP would
+                remain responsible for dividing messages into datagrams, reassembling messages, detecting errors,
+                putting packets in the right order, and resending lost packets. The new protocol was called TCP/IP.
+                It went on to become the standard for all Internet communication.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="grid-left">
+            <h4 class="adjust-margin"> <strong>Tim Berners-Lee </strong></h4>
+            <p>Tim Berners-Lee invented the World Wide Web in 1989, but the use of the WWW became widespread
+                in the mid 1990’s. Lee envisioned a global information space where information stored on computers
+                everywhere was linked and available to anyone anywhere.
+                In 1989, Lee submitted a proposal at CERN to develop an information system that would create a web
+                of information. In 1990, he wrote the Hypertext Transfer Protocol
+                (HTTP)—the language for computers to use to communicate hypertext documents over the Internet and
+                designed a scheme to give documents addresses on the Internet which is known as Universal Resource
+                Identifier (URL).
+            </p>
+        </div>
+        <div class="grid-right">
+            <img src="Images/timBernersLee.jpg" alt="mySpace logo" class="grid-img">
+        </div>
+    </div>
+</div>
+
+<footer><a href="https://github.com/anujaku/internethistoryproject" style="color: gray">Anuja Kulkarni</a> &#169</footer>
 
 
 
