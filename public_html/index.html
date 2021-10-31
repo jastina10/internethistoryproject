@@ -60,9 +60,10 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
 
-    width: 800px;
-    margin-left: 23%;
+    width: 50%;
+    margin-left: 25%;
     font-size: 25px;
+    text-align: center;
 
 }
 #heading{font-weight: bold;
@@ -74,29 +75,25 @@ nav{
     height: 70px;
     font-size: 25px;
 }
-    @media (max-width: 990px){.navbar-expand-lg {
-
+    @media only screen and (max-width: 620px) {
+        /* For mobile phones: */
+         .divSection {
+            width: 100%;
+        }
     }
 
-    }
+
 
     @media only screen and (max-width: 765px) {
-        .carousel-caption{
-            margin-bottom: 10%;
-        }
+
 
         .q1{
 
-            display: block;
 
-            font-weight: bold;
 
-            margin-block-start: 1em;
-            margin-block-end: 1em;
+            width: 100%;
+            margin-left: 10px;
 
-            width: 300px;
-            margin-left: 5%;
-            font-size: 25px;
 
         }
 
@@ -119,7 +116,7 @@ nav{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 -->
 <div class="wrapper">
-<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
