@@ -19,7 +19,7 @@
 
         nav{
             height: 70px;
-            font-size: 25px;
+            font-size: 20px;
         }
 
         /* The actual timeline (the vertical ruler) */
@@ -119,6 +119,12 @@
             color: black;
             text-align: center;
         }
+        .navbar a:hover{
+
+            background-color: gray;
+            color: black;
+
+        }
 
         /* Media queries - Responsive timeline on screens less than 600px wide */
         @media screen and (max-width: 600px) {
@@ -133,6 +139,22 @@
                 padding-left: 70px;
                 padding-right: 25px;
             }
+            .navbar a:hover{
+
+                background-color: gray;
+                color: black;
+
+            }
+            .menu {
+
+
+                background-color:rosybrown;
+                right: 0;
+                left: 0;
+                text-align: center;
+
+            }
+
 
             /* Make sure that all arrows are pointing leftwards */
             .container-timeline::before {
@@ -186,7 +208,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div  class="menu collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
@@ -212,10 +234,7 @@
                 </li>
 
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
         </div>
     </div>
 </nav>
