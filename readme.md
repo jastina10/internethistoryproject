@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Readme.md</title>
+
 </head>
 <body>
 <h4>This Website is created by Suhani Javia and Anuja Kulkarni</h4>
