@@ -9,7 +9,7 @@
 </head>
 <body>
 <h4>This Website is created by Suhani Javia and Anuja Kulkarni</h4>
-<h6>This Website Includes Following Topics</h6>
+<h5>This Website Includes Following Topics:</h5>
 <ul>
 <li> True Story of Internet</li>
 <li> Early Innovation</li>
@@ -22,4 +22,5 @@
 </ul>
 </body>
 </html>
+#
 Link to Our Website: [History of the Internet]()
