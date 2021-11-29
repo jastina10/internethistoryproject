@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>AAA Testing</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial,serif;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        .resize {
+            width: 600px;
+            height: auto;
+        }
+        /* Header/Blog Title */
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            background-color: #f1f1f1;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: lightgray;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+            margin-top: 20px;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>ARRANGE ACT ASSERT pattern for Python developers</h1>
+
+</div>
+
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="oop.html">OOP Concept</a>
+    <a href="solid.html">SOLID</a>
+    <a href="pylint.html">Pylint and OOP Glossary</a>
+</div>
+
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h3>ARRANGE-ACT-ASSERT: A PATTERN FOR WRITING GOOD TESTS</h3>
+
+            <p>A test is a procedure that exercises a behavior to determine if the behavior functions correctly. There are several different kinds of tests, like unit tests, integration tests, or end-to-end tests, but all functional tests do the same basic thing: they try something and report PASS or FAIL.</p>
+            <p>Testing provides an empirical feedback loop for development. That's how testing keeps us safe. With tests, we know when things break. Without tests, coding can be dangerous. We don't want to deploy big ol' bugs!</p>
+        </div>
+
+        <div class="card">
+            <h3>What Is AAA Testing?</h3>
+            <div class="fakeimg" style="height:420px;">
+                <p>AAA is a pattern for organizing tests. It breaks tests down into three clear and distinct steps:</p>
+                <ol>
+                    <li><p><b>Arrange</b> inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.</p></li>
+                    <li><p><b>Act</b> on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.</p></li>
+                    <li><p><b>Assert</b> expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times, they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes or fails.</p></li>
+
+                </ol>
+                <p>Behavior-Driven Development follows the Arrange-Act-Assert pattern by another name: Given-When-Then. The Gherkin language uses Given-When-Then steps to specify behaviors in scenarios. Given-When-Then is essentially the same formula as Arrange-Act-Assert.</p>
+                <p>Every major programming language has at least one test framework. Frameworks like JUnit, NUnit, Cucumber, and (my favorite) pytest enable you, as the programmer, to automate tests, execute suites, and report results. However, the framework itself doesn't make a test case "good" or "bad." You, as the tester, must know how to write good tests!</p>
+
+            </div>
+              </div>
+
+
+        <div class="card">
+
+
+            <h2>Implementing the AAA pattern</h2>
+            <p>The following is a Addition class with a single method which calculates a sum of two numbers:</p>
+            <img class="resize" src="images/addition.PNG" alt="calculator"><br><br>
+            <p>Our User class contains a method get_result() that should return the sum of two number. So how do we check that this method does what it says it does? We can write a unit test to make sure we’re getting the correct values. the following code does just that!</p>
+            <img class="resize" src="images/aaa.PNG" alt="calculator"><br>
+            <p>So the first part of our test suite is the test_calculation_addition method. The method just groups together the code that we're testing.</p>
+            <p>The <b>Arrange</b> step creates a variable named "mynumbers" for testing.</p>
+            <p>The <b>Act</b> step calls the "Addition" function using the "numumbers" variable and stores the returned value in a variable named "addition."</p>
+            <p>The <b>Assert</b> step verifies that "addition" is a correct sum of the values.</p>
+
+        </div>
+
+        <div class="card">
+            <h2>What the purpose of testing?</h2>
+            <div class="fakeimg" style="height:180px;">
+                <p>There are two fundamental purposes of testing: verifying procurement specifications
+                    and managing risk. First, testing is about verifying that what was specified is what was
+                    delivered: it verifies that the product (system) meets the functional, performance,
+                    design, and implementation requirements identified in the procurement specifications.
+                    Second, testing is about managing risk for both the acquiring agency and the system's
+                    vendor/developer/integrator. The testing program is used to identify when the work has
+                    been "completed" so that the contract can be closed, the vendor paid, and the system
+                    shifted by the agency into the warranty and maintenance phase of the project.</p>      </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Why testing is important?</h2>
+            <div class="fakeimg" style="height:200px;">
+                <p>Arrange-Act-Assert is powerful because it is simple. It forces tests to focus on independent, individual behaviors. It separates setup actions from the main actions. It requires test to make verifications and not merely run through motions. Notice how the pattern is not Arrange-Act-Assert-Act-Assert subsequent actions and assertions belong in separate tests! Arrange-Act-Assert is a great pattern to follow for writing good functional tests.</p>
+
+                <p>The AAA pattern gives us simple but effective steps for testing our code. Each step to this pattern has its own job to do. The arrange step sets up our data while the act step performs the actions needed to test it, and the assert will determine if the result from acting on that data is what we expected it to be.</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <h2>Testing Using external Data</h2>
+            <div class="fakeimg" style="height:200px;">
+                <h4>Read CSV File with Pandas</h4>
+                <p>Pandas is an opensource library that allows to you import CSV in Python and perform data manipulation. Pandas provide an easy way to create, manipulate and delete the data.</p>
+                <p>You must install pandas library with command <code>pip install pandas</code>. In Windows, you will execute this command in Command Prompt while in Linux in the Terminal.</p>
+                            </div>
+            <p>Here , I have made class CSVReader. There I used constructor as a method which takes filepath as an argument.</p>
+            <img class="resize" src="images/read.PNG" alt="calculator"><br><br>
+            <p>Now I am testing csv file with method test_add_method_calculator. I am asserting each row to check their result (sum of value 1 and value 2).</p>
+            <img class="resize" src="images/testcsv.png" alt="calculator"><br><br>
+            <p>We have output of about test is as follow:</p>
+            <img class="resize" src="images/Add_output.png" alt="calculator"><br><br>
+               </div>
+
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+            <h3>About Me</h3>
+            <div class="fakeimg" style="height:200px;"><h4>Suhani Javia</h4>
+            <p>Student at New Jersey Institute of Technology (NJIT) pursuing MS in Computer Science (CS).</p></div>
+            <br>
+            <a style="text-decoration: none" class="text-muted" href="#">Email: sj48@njit.edu</a>
+         <br> <a style="text-decoration: none" href="https://www.linkedin.com/in/suhani-javia-31b930128/" >LinkedIn</a>
+                <br>  <a  style="text-decoration: none"  href="https://github.com/jastina10/internethistoryproject">GitHub</a>
+
+        </div>
+        <div class="card">
+            <h3>About This Article</h3>
+            <div class="fakeimg">
+                <p>This Article basically explain AAA testing patter with an example of calculator project.</p>
+                <p>This article is the part of a Project towards credits for IS601 - Web Systems Development at New Jersey Institute of Technology</p>
+</div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <h4>      &copy; Suhani Javia 2021</h4>
+</div>
+
+</body>
+</html>

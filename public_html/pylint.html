@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Pylint</title>
+
+
+    <style>
+        img{
+            height: 600px;
+        }
+        nav{
+            height: 70px;
+            font-size: 20px;
+        }
+        .navbar a:hover{
+
+            background-color: gray;
+            color: black;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .resize {
+            width: 900px;
+            height: auto;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+            margin-top: 60px;
+        }
+        .div1{
+            background-color: #333333;
+            height: 60px;
+            color: white;
+            padding: 15px;
+            font-size: 15px;
+
+        }
+        .div2{
+            background-color: #333333;
+            height: 100px;
+            color: white;
+            padding: 15px;
+            font-size: 15px;
+
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+        #nav1 {
+            float: left;
+            width: 40%;
+            height: 300px; /* only for demonstration, should be removed */
+
+            padding: 20px;
+
+        }
+
+        /* Style the list inside the menu */
+        #nav1 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 60%;
+            background-color: #f1f1f1;
+            height: 2800px; /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-top: 500px;
+        }
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+        }
+
+         .collapsible:hover {
+            background-color: #555;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+        @media only screen and (max-width: 765px) {
+            .navbar a:hover{
+
+                background-color: gray;
+                color: black;
+
+            }
+            #nav1, article {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+
+
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="AAA_Testing.html">AAA Testing</a>
+    <a href="oop.html">OOP Concept</a>
+    <a href="solid.html">SOLID</a>
+</div>
+
+<section>
+    <div id="nav1">
+
+        <b><p style=" font-size:20px; text-align:center">Object Oriented Programming in Python: Glossary</p></b>
+        <button class="collapsible">Class</button>
+        <div class="content">
+            <p>A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.</p>
+        </div>
+        <button class="collapsible">Class variable</button>
+        <div class="content">
+            <p>A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.</p>
+        </div>
+        <button class="collapsible">Data member</button>
+        <div class="content">
+            <p>A class variable or instance variable that holds data associated with a class and its objects.</p>
+        </div>
+        <button class="collapsible">Function overloading</button>
+        <div class="content">
+            <p>The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.</p>
+        </div>
+        <button class="collapsible">Instance variable</button>
+        <div class="content">
+            <p> A variable that is defined inside a method and belongs only to the current instance of a class.</p>
+        </div>
+        <button class="collapsible">Inheritance</button>
+        <div class="content">
+            <p>The transfer of the characteristics of a class to other classes that are derived from it.</p>
+        </div>
+        <button class="collapsible">Instance</button>
+        <div class="content">
+            <p>An individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.</p>
+        </div>
+
+        <button class="collapsible">Instantiation</button>
+        <div class="content">
+            <p>The creation of an instance of a class.</p>
+        </div>
+        <button class="collapsible">Method</button>
+        <div class="content">
+            <p>A special kind of function that is defined in a class definition.</p>
+        </div>
+        <button class="collapsible">Object</button>
+        <div class="content">
+            <p>A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.</p>
+        </div>
+        <button class="collapsible">Operator overloading</button>
+        <div class="content">
+            <p>The assignment of more than one function to a particular operator.</p>
+        </div>
+
+        <button class="collapsible">Namespace</button>
+        <div class="content">
+            <p>A namespace is a system that has a unique name for each and every object in Python. An object might be a variable or a method.</p>
+        </div>
+
+        <button class="collapsible">Constructors</button>
+        <div class="content">
+            <p>Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created.</p>
+        </div>
+
+        <button class="collapsible">PyTest</button>
+        <div class="content">
+            <p>PyTest is a testing framework that allows users to write test codes using Python programming language.</p>
+        </div>
+        <button class="collapsible">Fixtures</button>
+        <div class="content">
+            <p>Fixtures are functions, which will run before each test function to which it is applied. Fixtures are used to feed some data to the tests such as database connections, URLs to test and some sort of input data.</p>
+        </div>
+        <button class="collapsible">Type Hinting</button>
+        <div class="content">
+            <p>Type hinting is a formal solution to statically indicate the type of a value within your Python code.</p>
+        </div><button class="collapsible">Type Casting </button>
+        <div class="content">
+            <p>In Python, Type Casting is a process in which we convert a literal of one type to another.</p>
+        </div>
+        <button class="collapsible">Unit Testing</button>
+        <div class="content">
+            <p>Unit Testing is the first level of software testing where the smallest testable parts of a software are tested. This is used to validate that each unit of the software performs as designed.
+                The unittest test framework is python’s xUnit style framework.</p>
+        </div>
+        <button class="collapsible">Facade</button>
+        <div class="content">
+            <p>Facade is a structural design pattern that provides a simplified (but limited) interface to a complex system of classes, library or framework. While Facade decreases the overall complexity of the application, it also helps to move unwanted dependencies to one place.</p>
+        </div>
+        <button class="collapsible">Design Patterns</button>
+        <div class="content">
+            <p>Design Patterns is the most essential part of Software Engineering, as they provide the general repeatable solution to a commonly occurring problem in software design. They usually represent some of the best practices adopted by experienced object-oriented software developers.</p>
+        </div>
+        <button class="collapsible">Encapsulation</button>
+        <div class="content">
+            <p>Encapsulation is the packing of data and functions that work on that data within a single object. By doing so, you can hide the internal state of the object from the outside. This is known as information hiding. A class is an example of encapsulation.</p>
+        </div>
+        <button class="collapsible">Polymorphism</button>
+        <div class="content">
+            <p>Polymorphism defines the ability to take different forms. Polymorphism in Python allows us to define methods in the child class with the same name as defined in their parent class.</p>
+        </div>
+        <button class="collapsible">Abstraction</button>
+        <div class="content">
+            <p>Abstraction is used to hide the internal functionality of the function from the users. The users only interact with the basic implementation of the function, but inner working is hidden. </p>
+        </div>
+
+        <button class="collapsible">Factory Method</button>
+        <div class="content">
+            <p> Factory Method is a Creational Design Pattern that allows an interface or a class to create an object, but lets subclasses decide which class or object to instantiate. Using the Factory method, we have the best ways to create an object. </p>
+        </div>
+
+
+    </div>
+
+    <article>
+        <h2>Pylint Usage in Python</h2><br>
+        <p>From this article, you will be learning about Pylint in Python. It is a static code analysis tool to find coding errors in your Python code.</p>
+        <b><p style=" font-size: 20px ">What is Pylint?</p></b>
+        <p>Pylint is a tool that</p>
+        <ul>
+            <li>Lists Errors which comes after execution of that Python code</li>
+            <li>Enforces a coding standard and looks for code smells</li>
+            <li>Suggest how particular blocks can be updated</li>
+            <li>Offer details about the code’s complexity</li>
+        </ul>
+        <b><p style=" font-size: 20px ">How to install and use Pylint?</p></b>
+
+        <p>To install it on systems such as Windows 10, Mac OS, Linux, use the following command:</p>
+        <div class="div1">
+            <p>pip install pylint</p>
+        </div>
+<br>
+        <p>To verify the pylint installation, type the following command</p>
+        <div class="div1">
+            <p>pylint --version</p>
+        </div><br>
+        <p>You can also use alternative methods such as:</p>
+        <p><b>1.</b> On Debian, Kali Linux, Ubuntu based systems such as Ubuntu, Elementary, etc.</p>
+
+        <div class="div2">
+            <p># Debian, Kali Linux, Ubuntu</p>
+            <p>sudo apt install pylint</p>
+        </div>
+        <br>
+
+        <p><b>2.</b>  On Fedora</p>
+
+        <div class="div2">
+            <p># Fedora</p>
+            <p>sudo dnf install pylint</p>
+
+        </div>
+
+        <br>
+
+        <p><b>3.</b> On OpenSUSE</p>
+
+        <div class="div2">
+            <p># OpenSUSE</p>
+            <p>sudo zypper install pylint</p>
+
+        </div>
+        <br>
+        <b><p style=" font-size: 20px ">Program Examples</p></b>
+        <p>Here is a simple program (calculator.py) having some styling issues.</p>
+
+        <img class="resize" src="images/c.PNG" alt="calculator"><br><br>
+
+        <b><p style=" font-size: 15px ">Run pylint</p></b>
+        <p>Below is the output after you pass the above calculator to Pylint. It lists down multiple styling issues in the program.</p>
+        <img class="resize" src="images/ce.PNG" alt="calculator"><br><br>
+        <b><p style=" font-size: 15px ">A better version of the above sample:</p></b>
+        <p>After fixing the code, the modified version looks like this:</p>
+        <img class="resize" src="images/calcm.PNG" alt="calculator"><br><br>
+        <p>The output will come as:</p>
+        <img class="resize" src="images/cem.PNG" alt="calculator"><br><br>
+        <b><p style=" font-size: 22px ">Is Pylint Worth It?</p></b><br>
+
+        <ol>
+            <li>This introduction emphasizes Pylint’s benefits. Pylint beautifies code, it finds likely errors, and with few exceptions, most practitioners who try Pylint adopt it long-term.</li>
+           <br> <p>Pylint has tradeoffs, but they are generally small and manageable as:</p>
+            <ul>
+                <li>It is easy to run Pylint in IDEs and Continuous Integration (CI) pipelines.</li>
+                <li>Pylint’s diagnostics are lucid.</li>
+                <li>While Pylint takes many minutes on large programs, the time it takes is almost always small in comparison with the errors it spotlights.</li>
+            </ul>
+<br>
+            <li>If your code in a particular style that Pylint doesn’t like, it might be that your style isn’t widely understood, and this is unfamiliar to other team members.</li>
+           <br> <li>If Pylint is wrong, and your style deserves acceptance, you can probably write a pylintrc directive to work out a compromise.</li>
+        </ol>
+
+    </article>
+</section>
+
+<footer>
+       <h4>      &copy; Suhani Javia 2021</h4>
+
+</footer>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+</body>
+</html>
+
